@@ -101,4 +101,8 @@ public class EmployeeController {
 	public int sal() {
 		return es.sal();
 	}
+	@GetMapping(value="sal2")
+	public List<String> sal2() {
+		return es.sal2();
+	}
 }

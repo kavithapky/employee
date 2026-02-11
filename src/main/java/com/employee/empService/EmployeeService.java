@@ -43,6 +43,7 @@ public class EmployeeService {
  public String dell() {
 	 return ed.dell();
  }
+
  @Autowired
 	EmployeeRepository er;
  public int getmax() {
@@ -106,6 +107,12 @@ public class EmployeeService {
 	 int s=a.stream().collect(Collectors.summingInt(x->x.getSalary()));
 	 return s;
  }
+ public List<String> sal2() {
+	 List<Employee> a=er.findAll();
+	 List<String> s=a.stream().filter(x->x.getSalary()>10000).map(y->y.getName()).collect(Collectors.toList());
+	 return s;
+	
+	}
  
  
 }
